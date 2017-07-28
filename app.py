@@ -16,8 +16,15 @@ def webhook():
 
     print("Request:")
     print(json.dumps(req, indent=4))
-    data = req["string"]
-    res = DataYuge.getSuggestionList(data)
+
+    if str(req["result"]["action"]) != "getListOFSuggestions":
+        return {"Answer":"Action not found"}
+
+    try:
+        data = req["result"]["parameters"]["BrandNames"]
+        res = DataYuge.getSuggestionList(data)
+    except(IndexError):
+        res = {"result":"Parameters not found"}
 
     res = json.dumps(res, indent=4)
     print(res)
