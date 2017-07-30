@@ -54,6 +54,7 @@ class FBFormat(object):
                         "type": "template",
                         "payload": {
                             "template_type": "generic",
+                            "image_aspect_ratio":"square",
                             "elements":
                                 templates
 
