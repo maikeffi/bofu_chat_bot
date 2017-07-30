@@ -17,14 +17,23 @@ def webhook():
     print("Request:")
     print(json.dumps(req, indent=4))
 
-    if str(req["result"]["action"]) != "getListOFSuggestions":
+    if str(req["result"]["action"]) == "getListOFSuggestions":
+        try:
+            data = req["result"]["parameters"]["BrandNames"]
+            cat = req["result"]["contexts"][0]["parameters"]["Category"]
+            res = DataYuge.getSearchProductList(data + " " + cat)
+        except(IndexError):
+            return {"result": "Parameters not found"}
+    elif str(req["result"]["action"]) == "getListOfComparedDetails":
+        try:
+            prodId = req["result"]["parameters"]["any"]
+            res = DataYuge.getProductComparisonDetails(prodId)
+        except(IndexError):
+            return {"result": "Work in progress"}
+    else:
         return {"Answer":"Action not found"}
 
-    try:
-        data = req["result"]["parameters"]["BrandNames"]
-        res = DataYuge.getSuggestionList(data)
-    except(IndexError):
-        res = {"result":"Parameters not found"}
+
 
     res = json.dumps(res, indent=4)
     print(res)
