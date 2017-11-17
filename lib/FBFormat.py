@@ -43,9 +43,8 @@ class FBFormat(object):
                  "title": "Could not find what you are looking for?",
                  "replies": [
                      {
-                         "content_type": "Lets try again ?",
+                         "content_type": "text",
                          "title": "Lets try again ?",
-                         "image_url": "http://example.com/img/red.png",
                          "payload": "Lets try again"
                      }
                  ]
