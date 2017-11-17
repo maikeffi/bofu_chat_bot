@@ -43,7 +43,8 @@ class FBFormat(object):
                  "title": "Could not find what you are looking for?",
                  "replies": [
                      {
-                         "Lets try again ?"
+                         "Lets try again ?",
+                         "Search by text ?"
                      }
                  ]
                  }
