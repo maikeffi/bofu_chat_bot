@@ -21,7 +21,6 @@ class FBFormat(object):
         for prod in res:
             title = prod["product_title"]
             if title not in titles:
-
                 if string.lower() in title.lower():
                     titles.append(title)
 
@@ -35,7 +34,24 @@ class FBFormat(object):
                  }
             ]
         }
-
+    def getQuickReplyWhenEmptySearch(self):
+        return {
+            "speech": "",
+            "messages": [
+                {"type": 2,
+                 "platform": "facebook",
+                 "title": "Could not find what you are looking for?",
+                 "replies": [
+                     {
+                         "content_type": "Lets try again ?",
+                         "title": "Lets try again ?",
+                         "image_url": "http://example.com/img/red.png",
+                         "payload": "Lets try again"
+                     }
+                 ]
+                 }
+            ]
+        }
     def getHorCarouselSearch(res, string, type):
 
         if type == "search":
