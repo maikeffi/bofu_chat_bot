@@ -42,10 +42,8 @@ class FBFormat(object):
                  "platform": "facebook",
                  "title": "Could not find what you are looking for?",
                  "replies": [
-                     {
                          "Lets try again ?",
                          "Search by text ?"
-                     }
                  ]
                  }
             ]
