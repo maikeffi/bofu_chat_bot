@@ -30,6 +30,9 @@ class DataYuge(object):
         res = DataYuge.processUrl(url)["data"]
         res = FBFormat.getHorCarouselSearch(res, prodId, "compare")
         return res
+    def getEmptySearchResults(self):
+        res = FBFormat.getQuickReplyWhenEmptySearch(FBFormat)
+        return res
     def processUrl(url):
         r = requests.get(url)
         data = json.loads(r.text)
