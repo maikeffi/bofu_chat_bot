@@ -61,16 +61,6 @@ class FBFormat(object):
 
         return {
             "speech": "",
-            "messages": [
-                {"type": 2,
-                 "platform": "facebook",
-                 "title": "",
-                 "replies": [
-                     "New Request",
-                     "More Suggestions"
-                 ]
-                 }
-            ],
             "source": "",
             "displayText": "Here you go: ",
             "data": {
@@ -146,6 +136,11 @@ class FBFormat(object):
                                     "title": "Buy From " +str(key).title(),
                                     "webview_height_ratio": "tall",
                                     "url": prod_url
+                                },{
+                               "type": "postback",
+                                "title": "New Request",
+                                "webview_height_ratio": "tall",
+                                "payload": "Lets try again ?"
                                 }
                             ]
                         }
