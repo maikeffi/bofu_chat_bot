@@ -56,6 +56,9 @@ class FBFormat(object):
         if type == "compare":
             templates = FBFormat.getCarouselTemplateForCompare(res)
 
+        if len(templates)<1:
+            return FBFormat.getQuickReplyWhenEmptySearch(FBFormat)
+
         return {
             "speech": "Here you go: ",
             "source": "Here you go:",

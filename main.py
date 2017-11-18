@@ -21,15 +21,15 @@ def webhook():
         try:
             data = req["result"]["parameters"]["BrandNames"]
             cat = req["result"]["contexts"][0]["parameters"]["Category"]
-            #res = DataYuge.getSearchProductList(data + " " + cat)
-            res = DataYuge.getEmptySearchResults(DataYuge)
+            res = DataYuge.getSearchProductList(data + " " + cat)
+            #res = DataYuge.getEmptySearchResults(DataYuge)
         except(IndexError):
             return {"result": "Parameters not found"}
     elif str(req["result"]["action"]) == "getListOfComparedDetails":
         try:
             prodId = req["result"]["parameters"]["any"]
-            #res = DataYuge.getProductComparisonDetails(prodId)
-            res = DataYuge.getEmptySearchResults(DataYuge)
+            res = DataYuge.getProductComparisonDetails(prodId)
+            #res = DataYuge.getEmptySearchResults(DataYuge)
         except(IndexError):
             return {"result": "Work in progress"}
     else:
