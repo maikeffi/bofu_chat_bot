@@ -42,8 +42,8 @@ class FBFormat(object):
                  "platform": "facebook",
                  "title": "Could not find what you are looking for?",
                  "replies": [
-                         "Lets try again ?",
-                         "Search by text ?"
+                         "New Request",
+                         "More Suggestions"
                  ]
                  }
             ]
@@ -98,11 +98,6 @@ class FBFormat(object):
                             "webview_height_ratio": "tall",
                             "payload": "Compare Product " + str(produrl).replace(
                                 "https://price-api.datayuge.com/api/v1/compare/detail?id=", "")
-                        },{
-                            "type": "postback",
-                            "title": "Lets try another product",
-                            "webview_height_ratio": "tall",
-                            "payload": "Lets try again ?"
                         }
                     ]
                 }
@@ -141,6 +136,11 @@ class FBFormat(object):
                                     "title": "Buy From " +str(key).title(),
                                     "webview_height_ratio": "tall",
                                     "url": prod_url
+                                },{
+                               "type": "postback",
+                                "title": "New Request",
+                                "webview_height_ratio": "tall",
+                                "payload": "Lets try again ?"
                                 }
                             ]
                         }
