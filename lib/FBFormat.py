@@ -98,6 +98,11 @@ class FBFormat(object):
                             "webview_height_ratio": "tall",
                             "payload": "Compare Product " + str(produrl).replace(
                                 "https://price-api.datayuge.com/api/v1/compare/detail?id=", "")
+                        },{
+                            "type": "postback",
+                            "title": "Lets try another product",
+                            "webview_height_ratio": "tall",
+                            "payload": "Lets try again ?"
                         }
                     ]
                 }
